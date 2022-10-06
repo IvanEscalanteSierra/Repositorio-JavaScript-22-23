@@ -4,6 +4,9 @@ let y = 2;
 var resultado = "";
 var multiplos = 0;
 var primos = 0;
+
+let primo = (num) => {for (var i = 2; i < num; i++) {if (num%i==0){return false;}};return true;};
+
 while (x < 201) {
 
     resultado += x + "<br>";
@@ -24,12 +27,3 @@ document.write("Hay "+multiplos+" multiplos de 5 y "+primos+" números primos.\n
 
 
 
-
-function primo(num){
-    for (var i = 2; i < num; i++) {
-        if (num%i==0){
-            return false;
-        }
-    };
-    return true;
-}

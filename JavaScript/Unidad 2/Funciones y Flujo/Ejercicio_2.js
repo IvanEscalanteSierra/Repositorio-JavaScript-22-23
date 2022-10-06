@@ -1,5 +1,10 @@
+let total = "";
 
-function add(nombre){
-    let yoquese = document.getElementById("nombre").value;
-            document.getElementById("lista").innerHTML = yoquese;
+function add() {
+    let name = document.getElementById("nombre").value;
+    let punto = "<li>" + name + "</li>";
+
+    total += punto;
+
+    document.getElementById("lista").innerHTML = total;
 }
