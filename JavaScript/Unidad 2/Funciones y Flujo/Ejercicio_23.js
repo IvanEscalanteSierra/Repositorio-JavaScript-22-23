@@ -11,6 +11,4 @@ let Precio_Peso = (peso<1) ? Precio_IVA+3:
 (peso>=3) ? Precio_IVA+10:
 'Error'
 
-
-
 document.write('Su pedido tendrá un coste de '+Precio_Peso+' €.')

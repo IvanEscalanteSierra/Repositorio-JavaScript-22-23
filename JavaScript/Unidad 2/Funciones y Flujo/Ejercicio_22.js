@@ -1,7 +1,3 @@
-//50+((altura-150)/4)*3 + (Edad-20)/4 y si es mujer *0,9
-
-
-
 let altura = Number(prompt("Introduce tu altura"));
 let edad = Number(prompt("Introduce tu edad"));
 let sexo = prompt("Introduce tu género");

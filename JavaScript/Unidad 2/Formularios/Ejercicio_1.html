@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio_1</title>
+  </head>
+
+  <body>
+    <form id="Formulary" novalidate>
+      <fieldset style="width: 120px">
+        <h2>Ejercicio_1</h2>
+        <div id="E1">
+          <label for="DNI">DNI:</label>
+          <input type="text" id="DNI" />
+          <br />
+          <label for="Name">Nombre:</label>
+          <input type="text" id="Name" />
+          <br />
+          <label for="Surname">Apellidos:</label>
+          <input type="text" id="Surname" />
+          <br />
+          <label for="Tel">Teléfono:</label>
+          <input type="tel" id="Tel" />
+          <br />
+          <br />
+          <textarea
+            name="Comentario"
+            id="comentario"
+            cols="50"
+            rows="7"
+            placeholder="Escriba aquí, por favor"
+            required
+            maxlength="250"
+          ></textarea>
+          <br />
+          <label for="Hour" required>Elija una hora: </label>
+          <input type="time" id="Hour" />
+          <button type="submit" value="Enviar()">Enviar</button>
+
+          <!-- El siguiente div pertenece a la parte de las cookies del ejercicio 2.-->
+          <div>
+            <p>Número de intentos:</p>
+            <p id="cook"></p>
+            <button type="reset" onclick="reloadCook()">Borrar intentos</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <br />
+
+    <script defer src="Ejercicio_1.js"></script>
+  </body>
+</html>
