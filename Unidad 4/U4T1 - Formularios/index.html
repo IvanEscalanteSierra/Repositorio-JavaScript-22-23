@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discos</title>
+</head>
+<body>
+    <form id="form">
+        <legend>Disco:</legend>
+
+        <br>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" pattern="[\S\s]{0,20}">
+        <br>
+        <br>
+        <label for="group">Grupo:</label>
+        <input type="text" id="group" pattern="[\S\s]{0,20}">
+        <br>
+        <br>
+        <label for="year">Año:</label>
+        <input type="text" id="year" pattern="[0-9]{4}">
+        <br>
+        <br>
+        <label for="type">Tipo:</label>
+        <input type="text" id="type">
+        <br>
+        <br>
+        <label for="local">Localización:</label>
+        <input type="number" id="local">
+        <br>
+        <br>
+        <label for="lend">¿Es prestado?</label>
+        <input type="checkbox" id="lend">
+        <br>
+        <br>
+        <input type="submit" value="Enviar" id="Fin">
+        <input type="reset" value="Borrar">
+    </form>
+<script src="script.js"></script>
+</body>
+</html>
