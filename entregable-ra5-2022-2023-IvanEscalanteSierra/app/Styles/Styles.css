@@ -1,0 +1,55 @@
+body{
+    margin: auto;
+    background-color: antiquewhite;
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    margin-left: 10px;
+    list-style: none;
+}
+
+#Evento{
+    background-color: coral;
+    border: 2px black double ;
+    width: 50%;
+}
+
+#Título{
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+    
+}
+
+.legendary{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#tabla{
+    background-color: white;
+    border: 2px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+td{
+    border: 2px solid black;
+}
+
+#formulary{
+    margin-top: 20px;
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#aviso{
+    color: red;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="Styles/Styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header></header>
+    <nav>
+      <ul>
+        <li><a href="Home.html" id="Home">Home</a></li>
+        <li><a href="Eventos.html" id="Eventos">Eventos</a></li>
+        <li><a href="Login.html" id="Login">Login</a></li>
+        <li><a href="Registro.html" id="Registro">Registro</a></li>
+      </ul>
+    </nav>
+
+    <div id="Evento">
+      <h1 id="Título"></h1>
+
+      <p id="Fecha"></p>
+      <p id="Hora"></p>
+      <p id="Ciudad"></p>
+
+      <table id="tabla">
+        <legend class="legendary"><b id="TituloEvento"></b></legend>
+    </table>
+    
+
+    <form id="formulary">
+        <legend><b>Inserción de corredor:</b></legend>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name">
+        <br>
+        <label for="surname">Apellidos:</label>
+        <input type="text" id="surname">
+        <br>
+        <label for="date">Edad:</label>
+        <input type="number" id="date">
+        <br>
+        <label for="dorsal">Dorsal:</label>
+        <input type="number" id="dorsal">
+        <br>
+        <label for="fini">Fecha Inicio:</label>
+        <input type="date" id="fini">
+        <br>
+        <label for="ffin">Fecha Final:</label>
+        <input type="date" id="ffin">
+        <br>
+        <button type="button" id="Boton">Insertar</button>
+        <p id="aviso"></p>
+    </form>
+
+</div>
+
+    <script src="js/Script.js"></script>
+  </body>
+</html>
