@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+}
+
+table{
+margin: auto;
+}
+
+td{
+    background-color: red;
+text-align: center;
+border: 2px solid black;
+margin: 1px;
+height: 150px;
+width: 150px;
+}
+
+img{
+    display: none;
+}
+
+.fondoverde{
+    background-color: green;
+}
