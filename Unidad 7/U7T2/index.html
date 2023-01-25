@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea 2</title>
+  </head>
+  <body>
+    <h2>Introduzca una ciudad y te diremos si está en la lista:</h2>
+    <input type="text" id="texto" />
+    <button id="boton">Comprobar</button>
+    <div id="Resultado"></div>
+
+    <script>
+      let peticion_http;
+
+      document.getElementById("boton").addEventListener("click", data);
+
+      function data() {
+        function carga_contenido() {
+          if (window.XMLHttpRequest) {
+            peticion_http = new XMLHttpRequest();
+          } else {
+            alert("No tienes soporte para AJAX");
+            return; // Salimos y no hacemos la petición
+          }
+
+          // Preparamos la petición
+          if (peticion_http) {
+            const URL = "http://localhost:8090/Unidad 7/U7T2/localidad.php";
+            // en la petición, me suscribo al evento "ReadyStateChange", y le
+            // digo que me llame a muestra_contenido cada vez que suceda (que cambie el estado)
+            peticion_http.onreadystatechange = muestra_contenido;
+            peticion_http.open("GET", URL);
+            peticion_http.send();
+          }
+        }
+
+        function muestra_contenido() {
+          if (peticion_http.readyState === READY_STATE_COMPLETE) {
+            if (peticion_http.status === HTTP_STATUS_OK) {
+              if (peticion_http.responseText == "SI")
+                document.getElementById("Resultado").innerHTML = "Pertenece";
+              document.getElementById("Resultado").style.color = "Green";
+            } else {
+              document.getElementById("Resultado").innerHTML = "No pertenece";
+              document.getElementById("Resultado").style.color = "Red";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
