@@ -30,7 +30,6 @@ function muestra_contenido(){
             let xml = peticion_http.responseXML;
             let Resultado = document.getElementById("data");
             let series = xml.getElementsByTagName('serie');
-            console.log(series)
 
             let tabla = document.createElement('table');
             
@@ -69,14 +68,13 @@ function muestra_contenido(){
         
 
 
-            let imagen1 = document.createElement('img');
-            let imagen2 = document.createElement('img');
-
-            imagen1.src = 'Images/icone-x-noir.png';
-            imagen2.src = 'Images/pngwing.com.png';
 
             for (let i = 0; i < series.length; i++) {
-                
+              let imagen1 = document.createElement('img');
+              let imagen2 = document.createElement('img');
+  
+              imagen1.src = 'Images/icone-x-noir.png';
+              imagen2.src = 'Images/pngwing.com.png';                
             let hijos = series[i].children;
                 
             let row = document.createElement('tr');
@@ -90,8 +88,8 @@ function muestra_contenido(){
                 (y==1) ? (column.setAttribute('class','directores'),column.appendChild(campo)):
                 (y==2) ? column.appendChild(campo):
                 (y==3 && Number.parseInt(hijos[3].innerHTML) > 2011) ? (column.className='verde',column.appendChild(campo)):
-                (y==3 && Number.parseInt(hijos[3].innerHTML) < 2011 && Number.parseInt(campo) > 2000) ? (column.className='verde',column.appendChild(campo)):
-                (y==3 && Number.parseInt(hijos[3].innerHTML) < 2000) ? (column.className='verde',column.appendChild(campo)):
+                (y==3 && Number.parseInt(hijos[3].innerHTML) < 2011 && Number.parseInt(hijos[3].innerHTML) > 2000) ? (column.className='amarillo',column.appendChild(campo)):
+                (y==3 && Number.parseInt(hijos[3].innerHTML) < 2000) ? (column.className='rojo',column.appendChild(campo)):
                 (y==4 && hijos[y].innerHTML=='si') ? column.appendChild(imagen2):
                 (y==4 && hijos[y].innerHTML=='no') ? column.appendChild(imagen1):
                 '';
