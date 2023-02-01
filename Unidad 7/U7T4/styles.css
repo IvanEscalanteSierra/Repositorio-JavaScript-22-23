@@ -1,0 +1,30 @@
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    width: 200px;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+.titles{
+    font-weight: bolder;
+}
+
+.directores{
+    font-style: italic;
+}
+
+img{
+    height: 25px;
+    width: auto;
+}
+
+.verde{color: green;}
+.amarillo{color: yellow;}
+.rojo{color: red;}

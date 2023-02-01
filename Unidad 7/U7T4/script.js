@@ -13,7 +13,7 @@ function data(){
       }
     
       if (peticion_http) {
-        const URL = "http://localhost:8090/Unidad 7/U7T3/Datos.xml";
+        const URL = "http://localhost:8090/Unidad 7/U7T4/tvshows.json";
         // en la petición, me suscribo al evento "ReadyStateChange", y le
         // V digo que me llame a muestra_contenido cada vez que suceda (que cambie el estado) V
         peticion_http.onreadystatechange = muestra_contenido;
@@ -27,9 +27,9 @@ function muestra_contenido(){
     if (peticion_http.readyState === READY_STATE_COMPLETE) {
         if (peticion_http.status === HTTP_STATUS_OK) {
         
-            let xml = peticion_http.responseXML;
+            let json = JSON.parse(peticion_http.responseText);
             let Resultado = document.getElementById("data");
-            let series = xml.getElementsByTagName('serie');
+            let series = document.getElementsByTagName('serie');
 
             let tabla = document.createElement('table');
             
@@ -65,38 +65,51 @@ function muestra_contenido(){
             fila.appendChild(columna5);
             
             tabla.appendChild(fila);
-        
 
-
-
-            for (let i = 0; i < series.length; i++) {
+            for (let i = 0; i < json.series.length; i++) {
+              let row = document.createElement('tr');
               let imagen1 = document.createElement('img');
               let imagen2 = document.createElement('img');
-  
+              
               imagen1.src = 'Images/icone-x-noir.png';
               imagen2.src = 'Images/pngwing.com.png';                
-            let hijos = series[i].children;
-                
-            let row = document.createElement('tr');
             
-            for (let y = 0; y < hijos.length; y++) {
-                let column = document.createElement('td');
+              let column = document.createElement('td');
+              let column2 = document.createElement('td');
+              let column3 = document.createElement('td');
+              let column4 = document.createElement('td');
+              let column5 = document.createElement('td');
 
-                let campo = document.createTextNode(hijos[y].textContent);
-                //Lo que falta está aquí
-                (y==0) ? (column.setAttribute('class','titles'),column.appendChild(campo)):
-                (y==1) ? (column.setAttribute('class','directores'),column.appendChild(campo)):
-                (y==2) ? column.appendChild(campo):
-                (y==3 && Number.parseInt(hijos[3].innerHTML) > 2011) ? (column.className='verde',column.appendChild(campo)):
-                (y==3 && Number.parseInt(hijos[3].innerHTML) <= 2011 && Number.parseInt(hijos[3].innerHTML) >= 2000) ? (column.className='amarillo',column.appendChild(campo)):
-                (y==3 && Number.parseInt(hijos[3].innerHTML) < 2000) ? (column.className='rojo',column.appendChild(campo)):
-                (y==4 && hijos[y].innerHTML=='si') ? column.appendChild(imagen2):
-                (y==4 && hijos[y].innerHTML=='no') ? column.appendChild(imagen1):
-                '';
+              let campo = document.createTextNode(json.series[i].titulo);
+              let campo2 = document.createTextNode(json.series[i].cadena);
+              let campo3 = document.createTextNode(json.series[i].director);
+              let campo4 = document.createTextNode(json.series[i].year);
+              let campo5 = document.createTextNode(json.series[i].terminada);
 
-                row.appendChild(column);
-            }
-            tabla.appendChild(row);
+              column.setAttribute('class','titles');
+              column2.setAttribute('class','directores');
+              
+              (Number.parseInt(campo4.textContent) >= 2000 && Number.parseInt(campo4.textContent) <= 2011) ? column4.setAttribute('class','amarillo'):
+              (Number.parseInt(campo4.textContent) < 2000) ? column4.setAttribute('class','rojo'):
+              (Number.parseInt(campo4.textContent) > 2011) ? column4.setAttribute('class','verde'):
+              '';
+
+              (campo5.textContent =='si') ? column5.appendChild(imagen2):
+              (campo5.textContent =='no') ? column5.appendChild(imagen1):
+              '';
+              
+              
+              column.appendChild(campo);
+              column2.appendChild(campo2);
+              column3.appendChild(campo3);
+              column4.appendChild(campo4);
+              
+              row.appendChild(column);
+              row.appendChild(column2);
+              row.appendChild(column3);
+              row.appendChild(column4);
+              row.appendChild(column5);
+              tabla.appendChild(row);
             }
 
 

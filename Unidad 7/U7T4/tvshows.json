@@ -1,0 +1,25 @@
+{
+    "series": [
+      {
+        "titulo": "El Señor de los anillos, los anillos de poder.",
+        "cadena": "Amazon Prime",
+        "director": "J. A. Bayona Wayne Yip Charlotte Brändström",
+        "year": 2022,
+        "terminada": "no"
+      },
+      {
+        "titulo": "Stranger Things",
+        "cadena": "Netflix",
+        "director": "Matt Duffer y Ross Duffer",
+        "year": 2018,
+        "terminada": "no"
+      },
+      {
+        "titulo": "Chainsaw Man",
+        "cadena": "Mappa",
+        "director": "Ryuu Nakayama",
+        "year": 2022,
+        "terminada": "no"
+      }
+    ]
+  }
