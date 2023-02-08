@@ -19,7 +19,7 @@ function AddShow(){
     (Director=='') ? alert('El director no puede ser nulo.'):
     (Chain=='') ? alert('La cadena no puede ser nulo.'):
     (Year=='') ? alert('El año no puede ser nulo.'):
-    (console.log('Creación de objeto correcta'),NuevaSerie= {'Titulo':Title,'Director':Director,'Cadena':Chain,'Anyo':Year,'Finished':Finished});
+    (console.log('Creación de objeto correcta'),NuevaSerie= {titulo:Title,director:Director,cadena:Chain,anyo:Year,terminada:Finished});
 
     EfectuoPOST(NuevaSerie);
 }
@@ -32,14 +32,15 @@ function EfectuoPOST(Serie){
     let cadena_formato_json = JSON.stringify(Serie);
     xhr.onreadystatechange = () => {
         if (
-            this.readyState == READY_STATE_COMPLETE &&
-            this.status == HTTP_STATUS_OK
+            xhr.readyState === READY_STATE_COMPLETE &&
+            xhr.status === HTTP_STATUS_OK &&
+            xhr.responseText === '"ok"'
         ) {
-            document.getElementById('resultado').style.color= 'Green';
+            document.getElementById('resultado').style.color= 'green';
         } else{
-            document.getElementById('resultado').style.color= 'Red';    
-        }
+            document.getElementById('resultado').style.color= 'red';    
+        };
+        document.getElementById('resultado').innerHTML = xhr.responseText;
     };
-    document.getElementById('resultado').innerHTML = xhr.responseText;
     xhr.send(cadena_formato_json);
 }
